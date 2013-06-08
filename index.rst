@@ -1,78 +1,44 @@
-===============
-Webdev Bootcamp
-===============
+======================================================
+Documentación para el Desarrollador de Mozilla Hispano
+======================================================
 
-Perhaps you are familiar with Git, Django, jQuery, 
-Python, JS, CSS, HTML, RabbitMQ, Celery and **the DOM**. 
+Así que términos como Git, Django, jQuery, Python, JS, CSS,
+HTML, RabbitMQ, Celery y **el DOM** te parecen familiares.
 
-Despite all that, web developing at Mozilla can still be
-challenging.  
-The *Webdev Bootcamp* is an attempt to clarify how things 
-are sometimes done.
+Aun así, el desarrollo para Mozilla Hispano puede ser un reto.
+
+La *Documentación para el Desarrollador de Mozilla Hispano* es
+un intento de aclarar cómo se hacen las cosas.
 
 .. seealso::
-   If you are doing Django development for Mozilla, 
-   much of our Django behavior is encapsulated in 
+   Si estás desarrollando con Django para Mozilla, muchos de
+   nuestros patrones están encapsulados en
    `Playdoh <http://playdoh.readthedocs.org/>`_.
 
 .. note::
-   `This documentation is in Github`_,
-   so if you find any mistakes or omissions
-   please fork it and submit a pull request.
+   Esta documentación está en `el repo dev-docs de GitHub`_,
+   así que si encuentras errores u omisiones, por favor
+   haz un fork y envíanos un pull request.
 
 .. warning::
-   This document is strictly a guide.  If the documentation told you to 
-   jump off a cliff, `would you <http://xkcd.com/1170/>`_?  Likewise,
-   if you can do something better or if you think what's been
-   documented is not right, challenge it and make life better for your
-   webdev siblings.
+   Este documento es estrictamente una guía. Si la documentación te
+   dice que saltes por un precipicio, ¿`lo harías <http://xkcd.com/1170/>`_?
+   De la misma manera, si puedes hacer algo mejor o si piensas que lo
+   que se está documentando no es correcto, rétanos y haz que la vida sea
+   mejor para tus vecinos del desarrollo Web.
 
 .. toctree::
    :maxdepth: 2
 
    accounts
-   devprocess
-   localdev
-   bugzilla
    git
-   jenkins
    coding
    js-style
-   l10n
-   packaging
-   data
-   servers
-   errors
-   communications
-   email
-   conferencecalls
-   documentation
-   others
-   who
-   mozilla
+
+.. _`el repo dev-docs de Github`: https://github.com/mozillahispano/dev-docs
 
 
-.. _`This documentation is in Github`: https://github.com/mozilla/webdev-bootcamp
-
-
-Indices
+Índices
 =======
 
 * :ref:`genindex`
-
-
-Todo
-====
-
-* port this document - http://etherpad.mozilla.org:9000/webdev-bootcamp
-* Link to jsocol's continuous deployment doc
-* Link to IT Requests
-* Intersphinx
-* Add indexes everywhere.
-* See if the anonymize directory is correct.
-* Verify that the slave db is correct.
-* screen shots
-* explain data centers - http://blog.mozilla.com/mrz/2010/01/04/mozillas-new-phoenix-data-center/
-
-
-.. todolist::
