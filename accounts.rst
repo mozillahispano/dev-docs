@@ -1,56 +1,36 @@
 .. index:: accounts
 
-Accounts You'll Need
-====================
+Cuentas que necesitarás
+=======================
 
-Most of the Mozilla web development process takes place between Bugzilla,
-IRC, and GitHub. There are some other accounts you might need too. Here's
-everything you should request when you start at Mozilla:
+La mayor parte del proceso de desarrollo toma parte entre Bugzilla,
+el IRC, y GitHub. Hay algunas cuentas adicionales que puedes llegar
+a necesitar. Aquí está todo lo que deberías tener para comenzar a
+desarrollar en Mozilla Hispano:
 
-List of All Accounts (and How to Get Them)
-------------------------------------------
+Lista de todas las cuentas (y cómo obtenerlas)
+----------------------------------------------
 
-Use the links to each app to get to their signup form.
+Usa los enlaces a cada aplicación para ir al formulario de registro.
 
-* *Email* and other communication accounts
+* *Correo electrónico* y otras cuentas de comunicación
 
-  See :ref:`communications-chapter` for details.
+  Lee :ref:`communications-chapter` para más detalles.
 
-* `Bugzilla`_ — use your @mozilla.com email to get 1337 access, and
-  put your IRC nick or whatever you go by in your Bugzilla username
-  for easier searching (example: ``Matthew Riley MacPherson
+* `Bugzilla`_ — coloca tu nick de IRC o alias en tu nombre de usuario
+  de Bugzilla para facilitar las búsquedas. (por ejemplo: ``Matthew Riley MacPherson
   [:tofumatt]``).
 
-  See :ref:`bugzilla-chapter` for more details.
+* `GitHub`_ — una cuenta gratuita es todo lo que se necesita para desarrollar
+  en los `proyectos de Mozilla Hispano`_
 
-* `GitHub`_ — a free account is all that's required to develop on Mozilla web
-  apps/sites.
+  Contacta a  ``nukeador`` en IRC para ser añadido a los grupos/proyectos adecuados.
 
-  Ping ``wenzel``, ``jsocol``, or your manager on IRC to get added to the right groups.
+  En :ref:`git-chapter` puedes encontrar más información.
 
-  See :ref:`git-chapter` for more details.
+* `TeamBox`_ - TODO
 
-* IRC_ — check out the wiki to learn about Mozilla IRC. You should
-  register your main nickname on IRC so it doesn't get stolen and so
-  you can access any channels that require you to ``IDENTIFY``.
-
-  See :ref:`irc-chapter` for more details.
-
-* Mercurial_ and ``svn`` — Sometimes things aren't in GitHub and you need to
-  use ``hg`` or ``svn``. Locale files in particular are stored in Subversion
-  for various reasons. Check out `Becoming a contributor`_ and be sure to ask
-  for "Level 2 Mercurial Access".
-
-* VPN — You'll have access to Mozilla-MV_ (office network) by default, though
-  it does require some setup. Access to Mozilla-MPT_ is by request only however,
-  and you'll need it.
-
-  See :ref:`vpn-info` for more details.
-
-.. _Mozilla-MPT: https://intranet.mozilla.org/IT_MPT-RemoteAccess
-.. _Mozilla-MV: https://intranet.mozilla.org/JumpHost
-.. _`Becoming a contributor`: http://www.mozilla.org/hacking/committer/
 .. _Bugzilla: https://bugzilla.mozilla.org/createaccount.cgi
+.. _`proyectos de Mozilla Hispano`: https://github.com/mozillahispano
 .. _GitHub: https://github.com/signup/free
-.. _IRC: https://wiki.mozilla.org/IRC
-.. _Mercurial: https://developer.mozilla.org/en/Mercurial_FAQ
+.. _TeamBox: http://intranet.mozilla-hispano.org/
