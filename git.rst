@@ -54,7 +54,7 @@ Prácticas de uso de Git en Mozilla
 * Frecuentemente usamos ``git rebase`` para combinar y corregir commits
   antes de mezclarlos con los repositorios originales. Esto ayuda a
   mantener la historia del repositorio limpia y a mejorar las revisiones
-  de código. GitHub tiene un `buen artículo sobre rebase`_.
+  de código. GitHub_ tiene un `buen artículo sobre rebase`_.
 
 .. _`modelo de git-flow`: http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/
 .. _`git submodules explicados`: http://longair.net/blog/2010/06/02/git-submodules-explained/
@@ -103,7 +103,7 @@ Típicamente harás un ``rebase`` de tus ramas con tu ``master`` para
 luego enviar (``push``) tus cambios a ``origin/master``.
 
 Vamos a asumir que has definido tu remota ``origin`` de la manera correcta
-en GitHub. Por ejemplo, para Zamboni_. ::
+en GitHub_. Por ejemplo, para Zamboni_. ::
 
     origin	git@github.com:jbalogh/zamboni.git
 
@@ -134,10 +134,10 @@ Como muestra:
 
 * ``git here`` te permite saber cuál es la rama actual.
 * ``git compare`` con las opciones apropiadas en ``git.config`` te dará
-  una URL de comparación en  Github_ para tu rama, que permite observar
+  una URL de comparación en  GitHub_ para tu rama, que permite observar
   las diferencias de los cambios que ya han sido enviados.
 * ``git url`` con las opciones correctas en ``git.config`` te devolverá
-  la URL al último commit en  Github_.
+  la URL al último commit en  GitHub_.
 
 Coloca estas herramientas en tu ``path`` y luego haz un fork y crea tus
 propias herramientas para compartir.
@@ -155,7 +155,7 @@ Oh My Zsh
 `Oh My Zsh <https://github.com/robbyrussell/oh-my-zsh>`_ es una colección
 excelente de scripts de zshell que pueden hacer que tu ambiente de `zsh`
 sea maravilloso. Comprende una colleción de plugins, incluyendo algunos para
-``git`` y GitHub.
+``git`` y GitHub_.
 
 Algunos de esos se solapan con ``git-tools``. Adicionalmente, al usar Oh My Zsh
 puedes ver fácilmente la rama actual y su estado en el ``prompt``.
@@ -193,3 +193,5 @@ hacer para ver su código::
      cualquier cosa.
    * En la tercera línea se hace un cambio a la rama de ``otro``. Si tienes el
      hash de un commit, puedes hacer ``git co $COMMIT_HASH``.
+
+.. _GitHub: https://github.com/
