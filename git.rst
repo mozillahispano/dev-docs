@@ -3,213 +3,193 @@
 .. _git-chapter:
 
 
-Git and Github
-==============
+Git y Github
+============
 
-Unless you have a good reason you should be using ``git`` and GitHub_
-for version control. One notable exception is many of our projects
-rely on SVN for localizers. We'll be attempting to phase that out.
+A menos que tengas un buen motivo, deberías estar utilizando ``git``
+y GitHub_ para el control de versiones.
 
-Git Resources
--------------
+Recursos sobre Git
+------------------
 
-If you don't know ``git`` or haven't used it in a team, fear not! There are
-lots of awesome sites for git newbies. We recommend:
+Si no sabes sobre ``git`` o no lo has usado en equipo, ¡no temas!.
+Existe una gran cantidad de sitios maravillosos para que te inicies
+con ``git``. Nosotros recomendamos:
 
-* Help.Github_ can help you get started with ``git`` regardless of
-  your operating system. If you haven't used GitHub_ before, it's the
-  perfect crash course. There's also some good info about ``git``
-  itself. You can ignore the "deploy" section, as we have our own
-  deployment process at Mozilla.
-* `Pro Git`_ is probably the best ``git`` resource in existence. It
-  covers pretty much everything you'd want to know about ``git``, so
-  it's quite lengthy, but it's a great read to get to know the basics
-  or to use as a reference. `Pro Git`_ is written by one of the
-  developers at GitHub_.
-* There's a good `list of git resources on StackOverflow`_. It lists
-  tools, tutorials, reference guides, etc. A lot of handy stuff there.
+* Help.Github_ te puede ayudar a arrancar con ``git`` sin importar
+  qué sistema operativo uses. Si no has usado GitHub_ antes, este es
+  el curso perfecto. También contiene buena información sobre ``git``
+  como tal.
+* `Pro Git`_ es probablemente el mejor recurso sobre ``git`` que
+  existe. Cubre practicamente todo lo que puedes llegar a necesitar,
+  por lo que es ciertamente extenso. Sin embargo, es una excelente
+  lectura para llegar a conocer los aspectos básicos o para usar como
+  referencia. `Pro Git`_ es escrito por uno de los desarrolladores de
+  GitHub_.
+* Hay una `lista de recursos sobre git en StackOverflow`_ que contiene
+  herramientas, tutoriales, guías de referencia, entre otros.
 
-Next time you start a project, use ``git``/GitHub_!  Working on a
-project by yourself is a bit different than working with others, but
-start with some basic ``git`` commands (clone, branch, merge) and some of 
-the more wild stuff (multiple origins, rebasing, etc.) will make more sense.
+La próxima vez que comiences un proyecto, ¡usa ``git``/GitHub_!. 
+Trabajar en algo por tu cuenta es diferente a trabajar con otros, pero
+comenzar con los comandos básicos de ``git`` (clone, branch, merge)
+hará que las cosas más avanzadas (múltiples orígenes, rebasing, ...)
+tengan más sentido.
 
 .. _Help.Github: http://help.github.com/
 .. _`Pro Git`: http://progit.org/book/
-.. _`list of git resources on StackOverflow`: http://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide
+.. _`lista de recursos sobre git en StackOverflow`: http://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide
 
-Git Practices at Mozilla
-------------------------
+Prácticas de uso de Git en Mozilla
+----------------------------------
 
-* Read about the `git-flow model`_. We work similarly to this at
-  Mozilla, except we use ``master`` as our development branch,
-  ``prod`` for our production branch, and ``bug-$BUG_NUMBER`` as our
-  feature branches. Once you get to know ``git``, understanding how to
-  use/manage branches effectively will allow you to keep different bug
-  fixes and features in their own branches. This is **really
-  awesome**, especially if regressions crop up!
-* We use ``git submodule`` for our libraries. This `git submodules explained`_
-  article helps you understand how they work.
-* We often use ``git rebase`` to combine and fix commits before merging to
-  mozilla origin repositories. This helps code reviews and keeps
-  commit history clean. GitHub has `a good rebase article`_.
+* Lee sobre el `modelo de git-flow`_. En Mozilla se trabaja de manera
+  similar, exceptuando el uso de ``master`` como rama de desarrollo,
+  ``prod`` como rama de producción, y ``bug-$BUG_NUMBER`` como ramas
+  de funcionalidades. Una vez conoces ``git``, entender como manejar
+  las ramas de manera eficiente permitirá mantener correcciones de
+  errores y características diferentes en sus propuas ramas. Esto es
+  **realmente maravilloso**, ¡especialmente en casos de regresiones!.
+* Usamos ``git submodule`` para nuestras librerías. El artículo sobre
+  `git submodules explicados`_ te ayudará a entender cómo funcionan.
+* Frecuentemente usamos ``git rebase`` para combinar y corregir commits
+  antes de mezclarlos con los repositorios originales. Esto ayuda a
+  mantener la historia del repositorio limpia y a mejorar las revisiones
+  de código. GitHub tiene un `buen artículo sobre rebase`_.
 
-.. _`git-flow model`: http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/
-.. _`git submodules explained`: http://longair.net/blog/2010/06/02/git-submodules-explained/
-.. _`a good rebase article`: http://help.github.com/rebase/
+.. _`modelo de git-flow`: http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/
+.. _`git submodules explicados`: http://longair.net/blog/2010/06/02/git-submodules-explained/
+.. _`buen artículo sobre rebase`: http://help.github.com/rebase/
 
-github.com/mozilla
-------------------
+github.com/mozillahispano
+-------------------------
 
-New projects for Mozilla websites should start in the `Mozilla
-account`_.
+Los nuevos proyectos para Mozilla Hispano deberían iniciarse en la
+`cuenta de Mozilla Hispano`_.
 
-Contact ``jsocol``, ``wenzel`` or ``peterbe`` to be added to individual projects
-you want to have your way with. They hang out in **#webdev** on IRC,
-which is a fine place to ask for access when you start at Mozilla.
+Contacta a ``Nukeador`` si deseas añadir un proyecto. Normalmente lo
+puedes encontrar en el canal **#mozilla-hispano** en IRC.
 
-.. _`Mozilla account`: https://github.com/mozilla
-.. _GitHub: https://github.com/
+.. _`cuenta de Mozilla Hispano`: https://github.com/mozillahispano
 
-Service Hooks
-~~~~~~~~~~~~~
+Trabajando en algún proyecto
+----------------------------
 
-GitHub has some service hooks that are helpful to Mozilla projects.
+Para trabajar en un proyecto existente:
 
-* Bugzilla - posts comments on bugzilla when commit messages reference a
-  bug by id, and closes bugs when commit message says 'fix' or 'close'
-* IRC - announces repository pushes in an irc channel
+* Haz un fork en tu cuenta
+* Crea una rama para tu trabajo
+* Envía un pull request para revisión
+* Mezcla tu commit con ``master``, que debería estar configurada para
+seguir ``origin/master``
 
-Contact ``davedash`` or ``wenzel`` to get access parameters for the
-hooks.
-
-Working on projects
--------------------
-In order to work on a project:
-
-* Fork it into your own account (do not develop directly in ``origin``)
-* Make a branch for your work
-* Submit a pull request for review
-* Merge your commit into ``master`` which should track the
-  ``origin/master``
 * ``git push``
-* Place a link to the commit (as it appears in the origin repository)
-  in the relevant bug.
+* Coloca un enlace al commit en el Bug o Issue relevante
 
-Commit Messages
-~~~~~~~~~~~~~~~
+Mensajes de Commit
+~~~~~~~~~~~~~~~~~~
 
-* Follow these guidelines_.
-* Should begin with a 50 character summary, with details if needed below.
-* Should contain ``bug 1234`` somewhere in the summary.
+* Sigue estos lineamientos_
+* Debería contener un resumen de 50 caracteres, con los detalles necesarios
+  debajo
+* Si se trata de un bug o issue, debería contener ``bug 1234`` en el resumen.
 
-.. _guidelines: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+.. _lineamientos: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 
-Keeping master in sync
-~~~~~~~~~~~~~~~~~~~~~~
+Manteniento master sincronizado
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You will want to keep your local ``master`` branch in sync. Typically
-you will rebase your branches with your ``master`` and ultimately you
-will push your ``master`` to ``origin/master``.
+Seguramente querrás mantener tu rama ``master`` local sincronizada.
+Típicamente harás un ``rebase`` de tus ramas con tu ``master`` para
+luego enviar (``push``) tus cambios a ``origin/master``.
 
-Let's assume you've defined your ``origin`` remote properly in GitHub.
-E.g. for Zamboni_. ::
+Vamos a asumir que has definido tu remota ``origin`` de la manera correcta
+en GitHub. Por ejemplo, para Zamboni_. ::
 
     origin	git@github.com:jbalogh/zamboni.git
 
 .. _Zamboni: https://github.com/jbalogh/zamboni
 
-You will want your ``.gitconfig`` to have the following::
+Tu archivo ``.gitconfig`` debería entonces contener lo siguiente::
 
     [branch "master"]
         remote = jbalogh
         merge = master
         rebase = true
 
+Haciendo la vida más fácil
+--------------------------
 
-Making life easier
-------------------
-
-Git Tools
-~~~~~~~~~
+Herramientas para Git
+~~~~~~~~~~~~~~~~~~~~~
 
 **shell**
 
-In order to make life easier we maintain a repository_ of
-``git-tools``. These are shell scripts or python scripts that commit
-all kinds of magic.
+Hay un repositorio de herramientas para git llamado git-tools_ que nos
+pueden facilitar la vida. Este contiene scripts de shell y Python que
+hacen cualquier tipo de magia.
 
-.. _repository: https://github.com/davedash/git-tools
+.. _git-tools: https://github.com/davedash/git-tools
 
-Here's a sampling:
+Como muestra:
 
-* ``git here`` will tell you the name of your branch, this is an excellent
-  building block
-* ``git bugbranch $BUGNUM`` will copy your current branch to an
-  appropriately named bug branch. This uses the :ref:`Bugzilla API
-  <bugzilla-api>`.
-* ``git compare`` with the appropriate ``git.config`` settings will
-  give you a Github_ compare URL for your branch (you'll need to push
-  to Github_ on your own).
-* ``git url`` with the appropriate ``git.config`` settings gives you
-  the last commit's URL on Github_.
+* ``git here`` te permite saber cuál es la rama actual.
+* ``git compare`` con las opciones apropiadas en ``git.config`` te dará
+  una URL de comparación en  Github_ para tu rama, que permite observar
+  las diferencias de los cambios que ya han sido enviados.
+* ``git url`` con las opciones correctas en ``git.config`` te devolverá
+  la URL al último commit en  Github_.
 
-Put these in your path and then fork and make your own tools and share.
+Coloca estas herramientas en tu ``path`` y luego haz un fork y crea tus
+propias herramientas para compartir.
 
 **vim**
 
-fugitive.vim_ may very well be the best Git wrapper of all time.
+fugitive.vim_ puede ser la mejor herramienta para Git y Vim de todos los
+tiempos.
 
 .. _fugitive.vim: https://github.com/tpope/vim-fugitive
 
 Oh My Zsh
 ~~~~~~~~~
 
-`Oh My Zsh <https://github.com/robbyrussell/oh-my-zsh>` is an
-excellent collection of zshell scripts that can make your `zsh`
-environment amazing. It includes a collection of plugins, including
-ones for ``git`` and Github_.
+`Oh My Zsh <https://github.com/robbyrussell/oh-my-zsh>`_ es una colección
+excelente de scripts de zshell que pueden hacer que tu ambiente de `zsh`
+sea maravilloso. Comprende una colleción de plugins, incluyendo algunos para
+``git`` y GitHub.
 
-Some of these overlap with ``git-tools``. Additionally by using Oh My
-Zsh you can easily display your current branch and it's dirtiness on
-your prompt.
+Algunos de esos se solapan con ``git-tools``. Adicionalmente, al usar Oh My Zsh
+puedes ver fácilmente la rama actual y su estado en el ``prompt``.
 
-Here is my prompt::
+Por ejemplo::
 
     dash@awesomepants in ~/Projects/bootcamp/the_code/docs
     (bootcamp) ±                                                    on master!
 
-Where:
+Donde:
 
-* ``bootcamp`` is my active `virtualenv`.
-* ``±`` signifies that I'm in a ``git`` repository.
-* ``master`` is the branch I am in.
-* ``!`` indicates that there are uncommitted things in my branch.
+* ``bootcamp`` es el `virtualenv` activo.
+* ``±`` significa que estoy en un repositorio ``git``.
+* ``master`` es la rama actual.
+* ``!`` indica que hay cambios sin enviar en la rama actual.
 
+Viendo código de otras personas
+-------------------------------
 
-Development Process
--------------------
+En algunas ocasiones vas a tener que probar código de otras personas localmente.
+Si tienes un pull request o un commit de la otra persona, esto es lo que debes
+hacer para ver su código::
 
-See :ref:`bug-life`
+    git remote add otro git@github.com:otro/repo.git
+    git fetch otro
+    git co otro/rama
 
-Looking at someone's code
-~~~~~~~~~~~~~~~~~~~~~~~~~
+.. note::
 
-Sometimes you need to run someone else's code locally. If they've
-given you a pull request, or a commit hash this is what you need to do
-to see there code::
-
-    git remote add davedash git@github.com:davedash/zamboni.git
-    git fetch davedash
-    git co davedash/branch
-
-Note:
-
-* The above assumes that someone else was me.
-* The first line defines a "remote". A remote is simply an alias to a
-  repository.
-* The second line fetches all my commit hashes that you don't already
-  have. Usually this is just branches, and commits, but in theory it
-  can be anything.
-* In the third line I can check out your branch. If you just gave me
-  a commit hash I would do ``git co $COMMIT_HASH``.
+   * ``otro`` es la otra persona.
+   * La primera línea define una *remota*. Una *remota* no es más que un
+     alias para un repositorio.
+   * La segunda línea descarga todos los commits de ``otro`` que aún no tienes
+     localmente. Normalmente esto son solo commits, pero en teoría puede ser
+     cualquier cosa.
+   * En la tercera línea se hace un cambio a la rama de ``otro``. Si tienes el
+     hash de un commit, puedes hacer ``git co $COMMIT_HASH``.
