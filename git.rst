@@ -79,9 +79,7 @@ Para trabajar en un proyecto existente:
 * Haz un fork en tu cuenta
 * Crea una rama para tu trabajo
 * Envía un pull request para revisión
-* Mezcla tu commit con ``master``, que debería estar configurada para
-seguir ``origin/master``
-
+* Mezcla tu commit con ``master``, que debería estar configurada para seguir ``origin/master``
 * ``git push``
 * Coloca un enlace al commit en el Bug o Issue relevante
 
