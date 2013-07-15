@@ -1,55 +1,52 @@
-How to Code
-===========
+Como programar
+==============
 
-In general, follow the languages established best practices, and fill
-in the gaps where there are holes.
-
+En general, sigue las mejores prácticas establecidas para cada lenguaje
+llenando los posibles huecos con sentido común.
 
 .. index:: code;guidelines
 
-General Guidelines
-------------------
+Lineamientos Generales
+----------------------
 
-* *Style matters*
+* *El estilo importa*
 
-  How code is aligned matters, because code is reviewed, edited, and
-  public. Code that is uneasy to read does not align with the spirit
-  of open source.
+  La manera como el código se alinea importa, porque el código es
+  revisado, editado y publico. El código difícil de leer no está acorde
+  con el espíritu del código abierto.
 
-* *Be consistent*
+* *Consistencia*
 
-  If you do something a certain way, be able to justify it. Don't mix
-  `camelCase` with `underscore_words` unless you have good reason.
+  Si haces algo de cierta manera, debes ser capaz de justificarlo.
+  No mezcles `camelCase` con `guiones_bajos` al menos que tengas
+  una buena razón para hacerlo.
 
-* *Follow code around you*
+* *Sigue el código que te rodea*
 
-  If you don't know what you're doing try to follow what others have
-  done.
-
+  Si no sabes lo que haces intenta seguir lo que los demás han hecho.
 
 .. index:: code;testing
 
-Testing
+Pruebas
 ^^^^^^^
 
-In languages and frameworks that provide easy test-ability, *write
-tests!*
+En lenguajes y *frameworks* que proveen facilidades para pruebas,
+**¡escribe pruebas!**.
 
-Go for 80% or more coverage, especially in the following areas:
+Trabaja en tener 80% o más de cobertura, especialmente en:
 
-* privacy - e.g. test that private things are private
-* heavily used code - e.g. landing pages, library level code
-* re-opened bugs
+* *Privacidad*: prueba que las cosas privadas son privadas.
+* *Código muy usado*: por ejemplo, páginas iniciales o código en librerías.
+* *Bugs re-abiertos*
 
-Tests last longer than code, as they tend to define the products'
-functionality. They are valuable because they allow us to quickly
-make changes without fear of hindering functionality.
+Codificar pruebas toma más tiempo que hacer el código, debido a que
+suelen definir la funcionalidad de los productos. Las pruebas son muy
+valiosas porque nos permiten realizar cambios de manera rápida sin
+miedo afectar las funcionalidades.
 
-The other half of testing is continuous integration. We should be
-running our tests at every check in and be able to say with certainty
-that the code is correct to the best of our knowledge. See
-:ref:`ci-chapter`.
-
+La otra mitad de las pruebas es la integración contínua. Deberíamos estar
+corriendo nuestras pruebas en cada cambio realizado y ser capaces de decir
+con certeza que el código es correcto hasta nuestro mejor conocimiento.
 
 .. index:: code;python coding style
 
@@ -58,30 +55,31 @@ that the code is correct to the best of our knowledge. See
 Python
 ------
 
-We do what others in the python community have established:
+Hacemos lo que otros en la comunidad de Python han establecido:
 
-* We follow PEP8_.
-* We test using check.py_ which combines `pep8.py` and `pyflakes`.
-* We follow Pocoo_'s extensions of PEP8_ as they are well thought out.
+* Seguir el PEP8_.
+* Hacemos pruebas usando check.py_ u otra utilidad que combine `pep8.py` y `pyflakes`.
+* Seguimos las extensiones al PEP8_ de Pocoo_.
 
 
-Import Statements
-^^^^^^^^^^^^^^^^^
+Sentencias de importación
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We expand on PEP8_'s suggestions for import statements.  These greatly improve 
-ones ability to ascertain what is and isn't available in a given file.
+Extendemos las sugerencias establecidas en el PEP8_ para sentencias de importación.
+Estas mejoran sustancialmente la habilidad de conocer qué está y que no está disponible
+en un módulo dado.
 
-Import one module per import statement::
+Importa solo un módulo por sentencia de importación::
 
     import os
     import sys
 
-not::
+no::
 
     import os, sys
 
-Separate imports into groups with a line of whitespace: 
-standard library; Django (or framework); third-party; and local imports::
+Separa los grupos de importes con una línea en blanco:
+librería estándar; Django (o framework); módulos de terceros; e importes locales::
 
     import os
     import sys
@@ -92,20 +90,20 @@ standard library; Django (or framework); third-party; and local imports::
 
     from myapp import models, views
 
-
-Alphabetize your imports, it will make your code easier to scan.  See how terrible this is::
+Alfabetiza tus importes, esto hará que tu código sea más fácil de escanear.
+Observa lo terrible que es esto::
 
     import cows
     import kittens
     import bears
 
-A simple sort::
+Con un orden sencillo::
 
     import bears
     import cows
     import kittens
 
-Imports on top, ``from``-imports below::
+Imports primero, ``from``-imports después::
 
     import x
     import y
@@ -114,7 +112,7 @@ Imports on top, ``from``-imports below::
     from xylophone import bar
     from zoos import lions
 
-That's loads easier to read than::
+Eso es muchísimo más fácil de leer que::
 
     from bears import pandas
     import x
@@ -124,52 +122,55 @@ That's loads easier to read than::
     from zoos import lions
 
 
-Lastly, when importing things into your namespace from a package use an alphabetized
-``CONSTANT``, ``Class``, ``var`` order::
+Por último, cuando se importen objetos dentro de tu espacio de nombres
+desde un paquete, utiliza el orden ``CONSTANTES``, ``Clases``, ``variables``
+de forma alfabética::
 
     from models import DATE, TIME, Dog, Kitteh, upload_pets
 
+Si es posible, sería más fácil importar el paquete completo. Especialmente
+en el caso de métodos esto ayuda a responder la pregunta "¿de dónde saliste ``tu``?"
 
-If possible though, it may be easier to import the entire package, especially for methods 
-as it help answers the question, "where did ``you`` come from?"
-
-Bad::
+Malo::
 
     from foo import you
 
 
     def my_code():
-        you()  # wait, is this defined in this file?
+        you()  # espera, ¿esto está definido en este archivo?
 
 
-Good::
+Bueno::
 
     import foo
 
 
     def my_code():
-        foo.you()  # oh you...
+        foo.you()  # ah ok...
 
 
-Whitespace matters
-^^^^^^^^^^^^^^^^^^
+El espacio en blanco importa
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Use 4 spaces, not 2---it increases legibility considerably.
-* Never use tabs---history has shown that we cannot handle them.
+* Usa siempre 4 espacios para indentar, no 2. Esto mejora la legibilidad considerablemente.
+* Nunca utilices tabulaciones, la historia ha demostrado que no podemos manejarlas.
 
-Use single quotes unless double (or triple) quotes would be an improvement::
+Las comillas
+^^^^^^^^^^^^
 
-    'this is good'
+Usa comillas sencillas en vez de dobles o triples si puede representar una mejora::
 
-    'this\'s bad'
+    'esto es bueno'
 
-    "this's good"
+    'esto \'es\' malo'
 
-    "this is inconsistent, but ok"
+    "esto 'es' bueno"
 
-    """this's sometimes "necessary"."""
+    "esto es inconsistente, pero se acepta"
 
-    '''nobody really does this'''
+    """a veces 'esto' es "necesario"."""
+
+    '''nadie hace esto realmente'''
 
 
 .. _PEP8: http://www.python.org/dev/peps/pep-0008/
@@ -182,20 +183,20 @@ Use single quotes unless double (or triple) quotes would be an improvement::
 Django
 ------
 
-Follow :ref:`python`. There are a few things in Django that will make
-your life easier:
+Sigue las recomendaciones para :ref:`python`. Hay algunas cosas en Django que
+harán tu vida más fácil:
 
-Use ``resolve('myurl')`` and ``{{ url('myurl') }}`` when linking to
-internal URLs. This will handle hosts, relative host names, changed
-end points for you. It will also noticeably break so dead-links don't
-linger in your code.
+Usa ``resolve('myurl')`` y ``{{ url('myurl') }}`` cuando hagas enlaces
+a URLs internas. Esto manejará automáticamente hosts, nombres relativos
+y rutas cambiadas por ti. Igualmente, usar estos métodos te dará mensajes
+de error descriptivos si hay un enlace roto.
 
 .. highlight:: jinja
 
-Indentation within templates should be handled as such::
+La indentación en las plantillas debería manejarse de la siguiente manera::
 
     {% if indenting %}
-      <p>This is how it's done</p>
+      <p>Así es que se hace</p>
     {% endif %}
 
 
@@ -204,16 +205,14 @@ Indentation within templates should be handled as such::
 Playdoh
 ^^^^^^^
 
-New web-apps should be spawned from Playdoh_ and existing ones should
-follow the spirit of Playdoh_. Playdoh_ collects lessons that several
-Mozilla Django projects have learned and wraps them into a single
-Django project template.
+Las nuevas aplicaciones Web deberían estar basadas en Playdoh_ y las
+existentes deberían seguir el mismo espíritu de Playdoh_. Playdoh_
+reune lecciones que varios proyectos hechos en Django en Mozilla han
+aprendido y los envuelve en una plantilla para tus proyectos.
 
-In the future, much of Playdoh_'s moving parts (Middleware, filters,
-etc) will be moved into a separate library so these features won't be
-lost.
-
-See :ref:`packaging`.
+En el futuro, la mayor parte de los componentes de Playdoh_ serán
+movidos a librerías separadas de manera que esas características no
+se pierdan.
 
 .. _Playdoh: https://github.com/mozilla/playdoh
 
@@ -222,22 +221,21 @@ See :ref:`packaging`.
 Javascript
 ----------
 
-See :ref:`js-style`.
-
+Lee :ref:`js-style`.
 
 .. index:: code;html5 coding style
 
 HTML
 ----
 
-* Use the HTML5
-* Make sure your code validates
-* No CSS or JS in the HTML
-* Be semantic
-* Use doublequotes for attributes::
+* Usa HTML5
+* Asegúrate de que tu código valida
+* No coloques CSS o JS en el HTML
+* Se semántico
+* Usa comillas dobles para los atributos::
 
-      <a href="#">Good</a>
-      <a href='#'>Less Good</a>
+      <a href="#">Bueno</a>
+      <a href='#'>Menos bueno</a>
 
 
 .. todo::
