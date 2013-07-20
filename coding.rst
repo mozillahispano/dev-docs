@@ -237,8 +237,3 @@ HTML
       <a href="#">Bueno</a>
       <a href='#'>Menos bueno</a>
 
-
-.. todo::
-
-   The previous list compiles to weird html where the list is a bunch
-   of separate lists.
