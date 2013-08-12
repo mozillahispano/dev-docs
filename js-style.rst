@@ -1,229 +1,229 @@
 .. _js-style:
 
-JS Style Guide
-==============
+Guía de Estilo para JavaScript
+==============================
 
-First and Foremost
-------------------
+Primero que nada
+----------------
 
-**ALWAYS** use JSHint_ on your code. 
+Usa **SIEMPRE** JSHint_ en tu código.
 
 .. Note::
 
-   There are some exceptions for which JSHint complains about things in
-   node that you can ignore, like how it doesn't know what 'const' is
-   and complains about not knowing what 'require' is. You can add 
-   keywords to ignore to a `.jshintrc` file.
+   Hay algunas excepciones para las cuales JSHint se queja de cosas
+   en node que puedes ignorar, como por ejemplo no saber qué es 'const'
+   y 'require'. Para estos casos puedes añadir palabras claves a ignorar
+   en un archivo `.jshintrc`.
 
 .. _JSHint: http://www.jshint.com/
 
 
-Variable Formatting:
---------------------
+Formato de Nombres de Variables
+-------------------------------
 
 ::
 
-    // Classes: CapitalizedWords
+    // Clases: PalabrasCapitalizadas
     var MyClass = ...
 
-    // Variables and Functions: camelCase
+    // Variables y funciones: camelCase
     var myVariable = ...
 
-    // Constants: UPPER_CASE_WITH_UNDERSCORES
+    // Constantes: MAYUSCULAS_CON_GUIONES_BAJOS
     // Backend
     const MY_CONST = ...
 
-    // Client-side
+    // Del lado del cliente
     var MY_CONST = ...
 
 
-Indentation
+Indentación
 ~~~~~~~~~~~
 
-4-space indents (no tabs).
+Se debe indentar con 4 espacios (no tabulaciones).
 
-For our projects, always assign var on a newline, not comma separated::
+Para nuestros proyectos, siempre debes asignar variables en una nueva línea,
+no separado por comas::
 
-    // Bad
+    // Malo
     var a = 1,
         b = 2,
         c = 3;
     
-    // Good
+    // Bueno
     var a = 1;
     var b = 2;
     var c = 3;
 
 
-Use ``[]`` to assign a new array, not ``new Array()``.
+Usa ``[]`` para asignar un nuevo arreglo, no ``new Array()``.
 
-Use ``{}`` for new objects, as well.
+Igualmente, usa ``{}`` para crear nuevos objetos.
 
-Two scenarios for ``[]`` (one can be on the same line, with discretion
-and the other not so much)::
+A continuación se presentan dos escenarios para el uso de ``[]``,
+uno puede estar en una sola línea, el otro no tanto::
 
-    // Okay on a single line
+    // Bien en una sola línea
     var stuff = [1, 2, 3];
     
-    // Never on a single line, multiple only
+    // Nunca en una sola línea
     var longerStuff = [
         'some longer stuff',
         'other longer stuff'
     ];
 
 
-Never assign multiple variables on the same line
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nunca asignes multiples variables en la misma línea
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Bad::
+Malo, malo::
 
     var a = 1, b = 'foo', c = 'wtf';
 
 
-DO NOT line up variable names
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NO alinees los nombres de variable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Bad::
+Malo::
 
     var wut    = true;
     var boohoo = false;
 
 
-Semi-colons
------------
+Puntos y comas
+--------------
 
-**Use them.**
+**Úsalos.**
 
-Not because ASI is black-magic, or whatever. I'm sure we all understand
-ASI. Just do it for consistency.
+No porque la inserción automática de puntos y comas (ASI) sea magia negra,
+hazlo por consistencia.
 
-
-Conditionals and Loops
+Condicionales y bucles
 ----------------------
 
 ::
 
-    // Bad
+    // Malo
     if (something) doStuff()
 
-    // Good
+    // Bueno
     if (something) {
         doStuff();
     }
 
 
-Space after keyword, and space before curly
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Espacios después de una palabra clave y antes del corchete
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
-    // Bad
+    // Malo
     if(bad){
     
     }
 
-    // Good
+    // Bueno
     if (something) {
     
     }
 
 
-Functions
+Funciones
 ---------
 
-Named Functions
-~~~~~~~~~~~~~~~
+Funciones con nombre
+~~~~~~~~~~~~~~~~~~~~
 
-**Always** name functions, even if assigned to another variable or
-property. This improves error stacks when debugging.
+**Siempre** usa funciones con nombre, inclusive si la estás asignando a otra
+variable o propiedad. Esto mejora las pilas de error cuando se hace depuración.
 
-No space between name and opening paren. Space between closing paren
-and brace::
+No coloques espacios entre el nombre de la función y el paréntesis inicial, pero
+si entre el paréntesis de cierre y el corchete inicial::
 
     var method = function doSomething(argOne, argTwo) {
     
     }
 
 
-Anonymous Functions
-~~~~~~~~~~~~~~~~~~~
+Funciones anónimas
+~~~~~~~~~~~~~~~~~~
 
-You're doing it wrong. See above about named functions.
+Lo estás haciendo mal, lee sobre las funciones con nombre más arriba.
 
 
-Operators
----------
+Operadores
+----------
 
-Always use ``===``.
+Siempre debes usar ``===`` con la única excepción de comparaciones
+con ``null`` y ``undefined``.
 
-Only exception is when testing for null and undefined.
-
-Example::
+Ejemplo::
 
     if (value != null) {
     
     }
 
 
-Quotes
-------
-
-Always use single quotes: ``'not double'``
-
-Only exception: ``"don't escape single quotes in strings. use double quotes"``
-
-
-Comments
+Comillas
 --------
 
-For node functions, always provide a clear comment in this format::
+Siempre usa comillas simples: ``'no dobles'``
 
-    /* Briefly explains what this does
-     * Expects: whatever parameters
-     * Returns: whatever it returns
+La única excepción: ``"no escapes comillas simples en las cadenas así: \'. Usa comillas dobles."``
+
+
+Comentarios
+-----------
+
+Para funciones en ``node``, provee siempre un comentario claro con el siguiente formato::
+
+    /* Explicación breve de lo que se hace
+     * Expects: cualquier parámetro aceptado
+     * Returns: cualquier cosa retornada
      */
 
 
-If comments are really long, also do it in the ``/* ... */`` format
-like above. Otherwise make short comments like::
+Si los comentarios son realmente largos, utiliza el formato ``/* ... */``.
+De lo contrario, usa comentarios cortos como::
 
-    // This is my short comment and it ends in a period.
+    // Este es un comentario corto y termina con un punto.
 
 
-Ternaries
+Ternarios
 ---------
 
-Try not to use them.
+Trata de no utilizarlos.
 
-If a ternary uses multiple lines, don't use a ternary::
+Si un ternario usa varias líneas, no lo uses::
 
-    // Bad
+    // Malo
     var foo = (user.lastLogin > new Date().getTime() - 16000) ? user.lastLogin - 24000 : 'wut';
 
-    // Good
+    // Bueno
     return user.isLoggedIn ? 'yay' : 'boo';
 
 
-General Good Practices
-----------------------
+Buenas prácticas generales
+--------------------------
 
-If you see yourself repeating something that can be a constant, refactor
-it as a single constant declaration at the top of the file.
+Si te das cuenta que estás repitiendo algo que puede ser una constante,
+usa una sola definición de constante al comienzo del archivo.
 
-Cache regex into a constant.
+Define las expresiones regulares como constantes siempre.
 
-Always check for truthiness::
+Siempre debes probar la certidumbre::
 
-    // Bad
+    // malo
     if (blah !== false) { ...
 
-    // Good
+    // Bueno
     if (blah) { ...
 
 
-If code is really long, try to break it up to the next line or 
-refactor (try to keep within the 80-col limit but if you go a bit past
-it's not a big deal). Indent the subsequent lines one indent
-(2-spaces) in.
+Si el código es demasiado largo, trata de romperlo en varias líneas o
+refactoriza. Trata de mantenerte dentro del límite de 80 columnas por línea,
+pero si te pasas un poco no es un gran problema. Cuando rompas una línea,
+indenta las subsiguientes un nivel (2 espacios)
 
-If it looks too clever, it probably is, so just make it simple.
+Si el código luce demasiado inteligente, probablemente lo sea, así que
+solo manténlo sencillo.
